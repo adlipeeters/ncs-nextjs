@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/ui/navbar-menu";
 import { cn } from "../utilts/cn";
+import Image from "next/image";
 
 export function Navbar2() {
     return (

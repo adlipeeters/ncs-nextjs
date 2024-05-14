@@ -28,6 +28,13 @@ export default function Hero() {
 
   return (
     <div className="bg-white">
+      {/* <Image
+      className='fixed top-4 left-4 lg:left-8 hidden lg:block'
+        width={150}
+        height={150}
+        src={"/logo.png"}
+        alt='logo.png'
+      /> */}
       <Navbar2 />
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
@@ -64,7 +71,7 @@ export default function Hero() {
 
               <a
                 href="#"
-                className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm duration-300 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Încearcă acum
               </a>
