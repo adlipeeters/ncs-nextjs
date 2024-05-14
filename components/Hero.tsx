@@ -3,6 +3,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Navbar from './Navbar'
 import Image from 'next/image'
+import { Navbar2 } from './Navbar2'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -16,7 +17,7 @@ export default function Hero() {
 
   return (
     <div className="bg-white">
-      <Navbar />
+      <Navbar2 />
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

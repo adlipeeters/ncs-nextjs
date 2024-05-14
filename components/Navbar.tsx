@@ -17,8 +17,8 @@ const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
         // <header className="absolute inset-x-0 top-0 z-50">
-        <header className="inset-x-0 top-0 z-50 fixed backdrop-blur-md flex justify-center">
-            <nav className="flex items-center justify-between p-6 container border-[1px] border-gray-300 rounded-xl mt-3 backdrop-blur-3xl" aria-label="Global">
+        <header className="inset-x-0 top-0 z-50 fixed">
+            <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
@@ -52,7 +52,7 @@ const Navbar = () => {
                         Log in <span aria-hidden="true">&rarr;</span>
                     </a> */}
                     <button className='bg-green-500 px-6 py-2 rounded-md duration-300 hover:opacity-75'>Log in</button>
-                    <button className='border-[1px] border-green-500 text-green-500 px-6 py-2 rounded-md duration-300 hover:opacity-75'>Conectare</button>
+                    {/* <button className='border-[1px] border-green-500 text-green-500 px-6 py-2 rounded-md duration-300 hover:opacity-75'>Conectare</button> */}
                 </div>
             </nav>
             <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
