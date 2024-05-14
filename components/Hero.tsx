@@ -1,16 +1,27 @@
 import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Navbar from './Navbar'
 import Image from 'next/image'
 import { Navbar2 } from './Navbar2'
+import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
+// Preia controlul afacerii tale cu Leelo!
+const words = [
+  {
+    text: "Preia",
+  },
+  {
+    text: "controlul",
+  },
+  {
+    text: "afacerii",
+  },
+  {
+    text: "cu",
+  },
+  {
+    text: "Leelo!",
+    className: "text-blue-500 dark:text-blue-500",
+  },
+];
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -42,9 +53,9 @@ export default function Hero() {
             </div> */}
           </div>
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight c sm:text-6xl hero-title">
-              Preia controlul afacerii tale cu Leelo!
-            </h1>
+            <div className="flex flex-col items-center justify-center ">
+              <TypewriterEffectSmooth words={words} />
+            </div>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               e-Facturare și Ofertare, CRM, HR, Contracte și registratură,
               Management Proiecte, Task-uri, NIR, Facturi furnizori, Rapoarte si multe altele.
