@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
-import { cn } from "../utilts/cn";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { FiSun, FiMoon } from "react-icons/fi"
 import ThemeSwitcher from "./ThemeSwitcher";
+import { cn } from "@/lib/utils";
 
 export function Navbar2() {
     return (
