@@ -29,7 +29,7 @@ export function Testimonials() {
         <div className="flex flex-col 2xl:flex-row gap-16 justify-center container">
             <div className="flex justify-center items-center">
                 <div className="flex flex-col gap-4 justify-center items-center">
-                    <h1 className="text-3xl lg:text-5xl font-bold">Testimoniale</h1>
+                    <h1 className="text-3xl font-medium">Testimoniale</h1>
                     <Image
                         className="object-contain w-full h-auto"
                         width={200}

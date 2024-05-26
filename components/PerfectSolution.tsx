@@ -8,7 +8,7 @@ const PerfectSolution = () => {
             <div className='container flex flex-col justify-center'>
                 <div className="flex flex-col gap-3 justify-center items-center">
                     <div className='flex flex-col items-center'>
-                        <h1 className="text-3xl lg:text-5xl font-bold text-center">Soluția completă pentru gestionarea afacerii tale!</h1>
+                        <h1 className="text-3xl font-medium text-center">Soluția completă pentru gestionarea afacerii tale!</h1>
                         <Image
                             className="w-full object-contain h-auto max-w-[400px]"
                             width={100}

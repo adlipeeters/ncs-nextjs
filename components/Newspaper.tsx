@@ -8,7 +8,7 @@ export function Newspaper() {
     return (
         <div className="h-[25rem] rounded-t-md flex flex-col gap-10 antialiased items-center justify-center relative overflow-hidden bg-transparent">
             <div className="flex flex-col justify-center items-center">
-                <h1 className="text-3xl lg:text-5xl font-bold">Leelo în Presă</h1>
+                <h1 className="text-3xl font-medium">Leelo în Presă</h1>
                 <Image
                     className="object-contain w-full h-auto"
                     width={200}
