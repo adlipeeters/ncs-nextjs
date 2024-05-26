@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import { Navbar2 } from './Navbar2'
+import { Navbar2 } from './Navbar'
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 
 // Preia controlul afacerii tale cu Leelo!
@@ -27,7 +27,7 @@ export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-white">
+    <div className="">
       {/* <Image
       className='fixed top-4 left-4 lg:left-8 hidden lg:block'
         width={150}
@@ -63,7 +63,7 @@ export default function Hero() {
             <div className="flex flex-col items-center justify-center ">
               <TypewriterEffectSmooth words={words} />
             </div>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8">
               e-Facturare și Ofertare, CRM, HR, Contracte și registratură,
               Management Proiecte, Task-uri, NIR, Facturi furnizori, Rapoarte si multe altele.
             </p>
@@ -87,7 +87,7 @@ export default function Hero() {
             </div>
             <div className='flex justify-center'>
               <div className='flex justify-start w-full max-w-[500px]'>
-                <p className='text-gray-900'>Apasă aici</p>
+                <p>Apasă aici</p>
                 <Image
                   width={50}
                   height={50}
@@ -98,12 +98,12 @@ export default function Hero() {
             </div>
           </div>
           <div>
-            <Image
+            {/* <Image
               src={"/hero-dashboard-light.webp"}
               width={1000}
               height={1000}
               alt='hero-dashboard-light'
-            />
+            /> */}
           </div>
         </div>
         <div

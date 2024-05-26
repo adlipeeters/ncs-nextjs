@@ -1,108 +1,68 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
+"use client";
+import React, { useEffect, useState } from "react";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import { cn } from "../utilts/cn";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { FiSun, FiMoon } from "react-icons/fi"
+import ThemeSwitcher from "./ThemeSwitcher";
 
-const navigation = [
-    { name: 'Acasă', href: '#' },
-    { name: 'Caracteristici', href: '#' },
-    { name: 'Prețuri', href: '#' },
-    { name: 'De ce leelo?', href: '#' },
-    { name: 'Despre noi', href: '#' },
-    { name: 'Contact', href: '#' },
-]
-
-
-const Navbar = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+export function Navbar2() {
     return (
-        // <header className="absolute inset-x-0 top-0 z-50">
-        <header className="inset-x-0 top-0 z-50 fixed">
-            <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
-                        <span className="sr-only">Your Company</span>
-                        <Image
-                            width={100}
-                            height={100}
-                            src={"/logo.png"}
-                            alt='logo.png'
-                        />
-                    </a>
-                </div>
-                <div className="flex lg:hidden">
-                    <button
-                        type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        onClick={() => setMobileMenuOpen(true)}
-                    >
-                        <span className="sr-only">Open main menu</span>
-                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                    </button>
-                </div>
-                <div className="hidden lg:flex lg:gap-x-12">
-                    {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
-                            {item.name}
-                        </a>
-                    ))}
-                </div>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-2">
-                    {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Log in <span aria-hidden="true">&rarr;</span>
-                    </a> */}
-                    <button className='bg-green-500 px-6 py-2 rounded-md duration-300 hover:opacity-75'>Log in</button>
-                    {/* <button className='border-[1px] border-green-500 text-green-500 px-6 py-2 rounded-md duration-300 hover:opacity-75'>Conectare</button> */}
-                </div>
-            </nav>
-            <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-                <div className="fixed inset-0 z-50" />
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
-                            <img
-                                className="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                alt=""
-                            />
-                        </a>
-                        <button
-                            type="button"
-                            className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                            onClick={() => setMobileMenuOpen(false)}
-                        >
-                            <span className="sr-only">Close menu</span>
-                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                        </button>
-                    </div>
-                    <div className="mt-6 flow-root">
-                        <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className="space-y-2 py-6">
-                                {navigation.map((item) => (
-                                    <a
-                                        key={item.name}
-                                        href={item.href}
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    >
-                                        {item.name}
-                                    </a>
-                                ))}
-                            </div>
-                            <div className="py-6">
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Începe Acum
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </Dialog.Panel>
-            </Dialog>
-        </header>
-    )
+        <div className="relative w-full flex items-center justify-center">
+            <Navbar className="top-2" />
+            {/* <p className="text-black dark:text-white">
+                The Navbar will show on top of the page
+            </p> */}
+        </div>
+    );
 }
 
-export default Navbar
+function Navbar({ className }: { className?: string }) {
+    const [active, setActive] = useState<string | null>(null);
+    return (
+        <div
+            className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 px-4 hidden lg:block", className)}>
+            <Menu setActive={setActive}>
+                <MenuItem setActive={setActive} active={active} item="Acasa">
+                    {/* <div className="flex flex-col space-y-4 text-sm">
+                        <HoveredLink href="/web-dev">Web Development</HoveredLink>
+                        <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+                        <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+                        <HoveredLink href="/branding">Branding</HoveredLink>
+                    </div> */}
+                </MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Caracteristici">
+                    <div className=" text-sm grid grid-cols-1 lg:grid-cols-2 gap-10 p-4">
+                        <ProductItem
+                            title="Algochurn"
+                            href="https://algochurn.com"
+                            src="/hero-dashboard-light.webp"
+                            description="Prepare for tech interviews like never before."
+                        />
+                        <ProductItem
+                            title="Tailwind Master Kit"
+                            href="https://tailwindmasterkit.com"
+                            src="/hero-dashboard-light.webp"
+                            description="Production ready Tailwind css components for your next project"
+                        />
+                    </div>
+                </MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Prețuri"></MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Pricing">
+                    <div className="flex flex-col space-y-4 text-sm">
+                        <HoveredLink href="/hobby">Hobby</HoveredLink>
+                        <HoveredLink href="/individual">Individual</HoveredLink>
+                        <HoveredLink href="/team">Team</HoveredLink>
+                        <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+                    </div>
+                </MenuItem>
+                <MenuItem setActive={setActive} active={active} item="De ce leelo ?"></MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Despre noi"></MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Contact"></MenuItem>
+                <ThemeSwitcher />
+            </Menu>
+
+        </div>
+    );
+}

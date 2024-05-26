@@ -10,13 +10,20 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
+    // colors: {
+    //   lightBg: '#fff', // background color for light mode
+    //   darkBg: '#25293c',  // background color for dark mode
+    //   lightText: '#6f6b7d', // default text color for light mode
+    //   darkText: '#b6bee3',  // default text color for dark mode
+    // },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+      // backgroundImage: {
+      //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      //   "gradient-conic":
+      //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      // },
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",

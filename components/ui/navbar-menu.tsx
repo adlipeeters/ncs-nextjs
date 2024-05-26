@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,7 +28,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-gray-700"
+        className="cursor-pointer font-medium"
       >
         {item}
       </motion.p>
@@ -38,19 +38,22 @@ export const MenuItem = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={transition}
         >
+          {/* {active === item && children != null && ( */}
           {active === item && (
             <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-white backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="default-background backdrop-blur-sm rounded-2xl overflow-hidden border border-white dark:border-gray-700 shadow-xl"
               >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
-                  {children}
-                </motion.div>
+                {children != null ?
+                  <motion.div
+                    layout // layout ensures smooth animation
+                    className={`w-max h-full p-4`}
+                  >
+                    {children}
+                  </motion.div>
+                  : ''}
               </motion.div>
             </div>
           )}
@@ -67,12 +70,37 @@ export const Menu = ({
   setActive: (item: string | null) => void;
   children: React.ReactNode;
 }) => {
+  const [isTop, setIsTop] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsTop(window.scrollY < 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleMouseLeave = () => {
+    setActive(null);
+    if (window.scrollY < 50) setIsTop(true);
+  }
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full bg-white shadow-input flex justify-center space-x-4 px-8 py-6 border-gray-200 shadow-md"
+      onMouseEnter={() => setIsTop(false)}
+      onMouseLeave={handleMouseLeave} // resets the state
+      // className={`relative rounded-full shadow-input flex justify-center space-x-4 px-8 py-6 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'opacity-75 duration-500' : ''}`}
+      className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'opacity-75 duration-500' : ''}`}
     >
-      {children}
+      <div className="flex justify-between w-full items-center">
+        <Image
+          width={150}
+          height={150}
+          alt="logo"
+          src="/logo.png"
+        />
+        {children}
+      </div>
     </nav>
   );
 };
@@ -98,10 +126,10 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-gray-700">
+        <h4 className="text-xl font-bold mb-1">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem]">
+        <p className="text-sm max-w-[10rem]">
           {description}
         </p>
       </div>
@@ -113,7 +141,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-gray-700"
+      className=""
     >
       {children}
     </Link>
