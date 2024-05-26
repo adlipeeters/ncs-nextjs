@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const transition = {
   type: "spring",
@@ -70,7 +71,9 @@ export const Menu = ({
   setActive: (item: string | null) => void;
   children: React.ReactNode;
 }) => {
+  const { resolvedTheme } = useTheme()
   const [isTop, setIsTop] = useState(true);
+  const [logoUrl, setLogoUrl] = useState<string>('/logo.png');
   useEffect(() => {
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
@@ -80,6 +83,10 @@ export const Menu = ({
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    setLogoUrl(resolvedTheme === 'light' ? '/logo.png' : '/logo_white.png');
+  }, [resolvedTheme]);
 
   const handleMouseLeave = () => {
     setActive(null);
@@ -93,12 +100,17 @@ export const Menu = ({
       className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'opacity-75 duration-500' : ''}`}
     >
       <div className="flex justify-between w-full items-center">
-        <Image
-          width={150}
-          height={150}
-          alt="logo"
-          src="/logo.png"
-        />
+        <Link href="/">
+          <Image
+            className=""
+            width={150}
+            height={40}
+            // loading="eager"
+            alt="logo"
+            // src="/logo.png"
+            src={logoUrl}
+          />
+        </Link>
         {children}
       </div>
     </nav>

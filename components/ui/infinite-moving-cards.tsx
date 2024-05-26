@@ -117,6 +117,7 @@ export const InfiniteMovingCards = ({
                                     height={400}
                                     alt="img"
                                     src={"/cotidianul2.png"}
+                                    loading="eager"
                                 />
                             </div>
                         </blockquote>
