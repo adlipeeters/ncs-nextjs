@@ -61,7 +61,7 @@ export function Testimonials() {
                     {TESTIMONIALS.map((item, index) => (
                         <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                             <div className="">
-                                <Card className="border-0">
+                                <Card className="border-0 dark:border-[1px] dark:border-gray-700 dark:bg-transparent">
                                     <CardContent className="flex flex-col aspect-squar items-center justify-between gap-12 py-8 px-6">
                                         <Image
                                             className="object-contain w-full max-w-[250px] h-auto"
