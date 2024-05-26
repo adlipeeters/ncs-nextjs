@@ -71,7 +71,7 @@ export function Testimonials() {
                                             alt="logo"
                                             src={item?.image}
                                         />
-                                        <p className="text-center">"{item?.review}"</p>
+                                        <p className="text-center">{`"${item?.review}"`}</p>
                                         <div className="flex justify-center">
                                             {
                                                 Array.from({ length: item?.stars }).map((_, _i) => (
