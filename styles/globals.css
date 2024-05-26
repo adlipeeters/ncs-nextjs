@@ -39,16 +39,8 @@ body {
   background-color: #25293c;
 }
 
-/* .light .text-lightText {
-  color: #6f6b7d;
-}
-
-.dark .text-darkText {
-  color: #b6bee3;
-} */
-
 .light body {
-  color: #13101b;
+  color: #6f6b7d;
   background: #f5f5f5;
 }
 
@@ -61,6 +53,21 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.light h6,
+.light .h6,
+.light h5,
+.light .h5,
+.light h4,
+.light .h4,
+.light h3,
+.light .h3,
+.light h2,
+.light .h2,
+.light h1,
+.light .h1 {
+  color: #5d596c;
 }
 
 .hero-title {

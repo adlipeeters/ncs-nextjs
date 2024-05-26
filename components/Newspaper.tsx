@@ -2,14 +2,34 @@
 
 import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import Image from "next/image";
 
 export function Newspaper() {
     return (
-        <div className="h-[25rem] rounded-md flex flex-col antialiased bg-white items-center justify-center relative overflow-hidden bg-transparent">
+        <div className="h-[25rem] rounded-t-md flex flex-col gap-10 antialiased items-center justify-center relative overflow-hidden bg-transparent">
+            <div className="flex flex-col justify-center items-center">
+                <h1 className="text-3xl lg:text-5xl font-bold">Leelo în Presă</h1>
+                <Image
+                    className="object-contain w-full h-auto"
+                    width={200}
+                    height={50}
+                    // loading="eager"
+                    alt="logo"
+                    src={'/section-title-icon.png'}
+                />
+            </div>
             <InfiniteMovingCards
                 items={testimonials}
                 direction="right"
                 speed="slow"
+            />
+            <Image
+                className="max-w-[300px]"
+                width={300}
+                height={50}
+                // loading="eager"
+                alt="logo"
+                src={'/press-line.svg'}
             />
         </div>
     );
