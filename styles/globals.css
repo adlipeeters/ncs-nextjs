@@ -133,4 +133,5 @@
 
 .footer-bg {
   background: url('/footer-bg-light.png') no-repeat center center;
+  background-size: cover;
 }
