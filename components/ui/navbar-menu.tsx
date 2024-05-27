@@ -96,8 +96,8 @@ export const Menu = ({
     <nav
       onMouseEnter={() => setIsTop(false)}
       onMouseLeave={handleMouseLeave} // resets the state
-      // className={`relative rounded-full shadow-input flex justify-center space-x-4 px-8 py-6 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'opacity-75 duration-500' : ''}`}
-      className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'opacity-75 duration-500' : ''}`}
+      // className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'opacity-75 duration-500' : ''}`}
+      className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'duration-500' : ''}`}
     >
       <div className="flex justify-between w-full items-center">
         <Link href="/">

@@ -130,3 +130,7 @@
 .dark .landing-hero {
   /* background: linear-gradient(138.18deg, #eae8fd 0%, #fce5e6 94.44%); */
 }
+
+.footer-bg {
+  background: url('/footer-bg-light.png') no-repeat center center;
+}
