@@ -45,7 +45,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="default-background backdrop-blur-sm rounded-2xl overflow-hidden border border-white dark:border-gray-700 shadow-xl"
+                className="navbar-background backdrop-blur-sm rounded-2xl overflow-hidden border border-white dark:border-gray-700 shadow-xl"
               >
                 {children != null ?
                   <motion.div
@@ -97,7 +97,7 @@ export const Menu = ({
       onMouseEnter={() => setIsTop(false)}
       onMouseLeave={handleMouseLeave} // resets the state
       // className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'opacity-75 duration-500' : ''}`}
-      className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md default-background transition-all ${isTop ? 'duration-500' : ''}`}
+      className={`relative rounded-lg shadow-input flex justify-center space-x-6 px-8 py-4 border border-white dark:border-gray-700 shadow-md navbar-background transition-all ${isTop ? 'duration-500' : ''}`}
     >
       <div className="flex justify-between w-full items-center">
         <Link href="/">

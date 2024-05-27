@@ -9,6 +9,7 @@ import Features from "@/components/Features";
 import FrequentQuestions from "@/components/FrequentQuestions";
 import GetStarted from "@/components/GetStarted";
 import Footer from "@/components/Footer";
+import ContactUs from "@/components/ContactUs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Features />
       <FrequentQuestions />
       <GetStarted />
+      <ContactUs />
       <Footer />
     </main>
   );

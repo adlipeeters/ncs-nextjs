@@ -31,20 +31,20 @@ const FrequentQuestions = () => {
                         alt="logo"
                         src={'/frequent-questions.svg'}
                     />
-                    <Accordion type="single" collapsible className="w-full flex flex-col gap-3">
-                        <AccordionItem value="item-1" className="border-[1px] border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline">
+                    <Accordion type="single" collapsible className="w-full flex flex-col gap-2">
+                        <AccordionItem value="item-1" className="border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline bg-[var(--blue-secondary)]">
                             <AccordionTrigger className="hover:no-underline">Is it accessible?</AccordionTrigger>
                             <AccordionContent>
                                 Yes. It adheres to the WAI-ARIA design pattern.
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-2" className="border-[1px] border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline">
+                        <AccordionItem value="item-2" className="border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline bg-[var(--blue-secondary)]">
                             <AccordionTrigger className="hover:no-underline">Is it accessible?</AccordionTrigger>
                             <AccordionContent>
                                 Yes. It adheres to the WAI-ARIA design pattern.
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-3" className="border-[1px] border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline">
+                        <AccordionItem value="item-3" className="border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline bg-[var(--blue-secondary)]">
                             <AccordionTrigger className="hover:no-underline">Is it accessible?</AccordionTrigger>
                             <AccordionContent>
                                 Yes. It adheres to the WAI-ARIA design pattern.
