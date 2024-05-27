@@ -43,7 +43,7 @@ const ContactUs = () => {
                                 alt="suport-clienți"
                                 src={'/contact-customer-service.png'}
                             />
-                            <div className='flex justify-around pb-2'>
+                            <div className='flex flex-col gap-4 md:flex-row md:justify-around pb-2'>
                                 <div className='flex gap-2'>
                                     <div className='bg-[#7267f03a] p-2 rounded-md'>
                                         <HiOutlineMail className='text-[#7367f0] text-2xl w-8 h-8' />

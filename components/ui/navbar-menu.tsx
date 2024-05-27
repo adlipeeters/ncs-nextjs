@@ -76,6 +76,7 @@ export const Menu = ({
   const [isTop, setIsTop] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const [logoUrl, setLogoUrl] = useState<string>('/logo.png');
+  const [mounted, setMounted] = useState(false);
 
   const handleMouseLeave = () => {
     setActive(null);
@@ -83,6 +84,7 @@ export const Menu = ({
   }
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
     };
@@ -100,11 +102,14 @@ export const Menu = ({
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
     };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <nav
