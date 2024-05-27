@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { Cross as Hamburger } from 'hamburger-react'
 
 const transition = {
   type: "spring",
@@ -73,7 +74,14 @@ export const Menu = ({
 }) => {
   const { resolvedTheme } = useTheme()
   const [isTop, setIsTop] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const [logoUrl, setLogoUrl] = useState<string>('/logo.png');
+
+  const handleMouseLeave = () => {
+    setActive(null);
+    if (window.scrollY < 50) setIsTop(true);
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
@@ -88,10 +96,16 @@ export const Menu = ({
     setLogoUrl(resolvedTheme === 'light' ? '/logo.png' : '/logo_white.png');
   }, [resolvedTheme]);
 
-  const handleMouseLeave = () => {
-    setActive(null);
-    if (window.scrollY < 50) setIsTop(true);
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <nav
       onMouseEnter={() => setIsTop(false)}
@@ -105,13 +119,17 @@ export const Menu = ({
             className=""
             width={150}
             height={40}
-            // loading="eager"
+            loading="eager"
             alt="logo"
             // src="/logo.png"
             src={logoUrl}
           />
         </Link>
-        {children}
+        {!isMobile ?
+          children
+          :
+          <Hamburger size={30} />
+        }
       </div>
     </nav>
   );

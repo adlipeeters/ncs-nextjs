@@ -22,7 +22,8 @@ function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
     return (
         <div
-            className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 px-4 hidden lg:block", className)}>
+            // className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 px-4 hidden lg:block", className)}>
+            className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 px-4", className)}>
             <Menu setActive={setActive}>
                 <MenuItem setActive={setActive} active={active} item="Acasa">
                     {/* <div className="flex flex-col space-y-4 text-sm">
