@@ -121,7 +121,7 @@ export const Menu = ({
       <div className="flex justify-between w-full items-center">
         <Link href="/">
           <Image
-            className=""
+            className="max-w-[100px] md:max-w-[300px]"
             width={150}
             height={40}
             loading="eager"
