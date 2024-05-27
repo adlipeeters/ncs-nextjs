@@ -31,24 +31,23 @@ const FrequentQuestions = () => {
                         alt="logo"
                         src={'/frequent-questions.svg'}
                     />
-                    <Accordion type="single" collapsible className="w-full">
-                        <AccordionItem value="item-1">
-                            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                    <Accordion type="single" collapsible className="w-full flex flex-col gap-3">
+                        <AccordionItem value="item-1" className="border-[1px] border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline">
+                            <AccordionTrigger className="hover:no-underline">Is it accessible?</AccordionTrigger>
                             <AccordionContent>
                                 Yes. It adheres to the WAI-ARIA design pattern.
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-2">
-                            <AccordionTrigger>Is it styled?</AccordionTrigger>
+                        <AccordionItem value="item-2" className="border-[1px] border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline">
+                            <AccordionTrigger className="hover:no-underline">Is it accessible?</AccordionTrigger>
                             <AccordionContent>
-                                Yes. It comes with default styles that matches the other
-                                components aesthetic.
+                                Yes. It adheres to the WAI-ARIA design pattern.
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-3">
-                            <AccordionTrigger>Is it animated?</AccordionTrigger>
+                        <AccordionItem value="item-3" className="border-[1px] border-gray-300 dark:border-gray-700 rounded-md px-4 no-underline">
+                            <AccordionTrigger className="hover:no-underline">Is it accessible?</AccordionTrigger>
                             <AccordionContent>
-                                Yes. It is animated by default, but you can disable it if you prefer.
+                                Yes. It adheres to the WAI-ARIA design pattern.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

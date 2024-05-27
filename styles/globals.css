@@ -128,10 +128,16 @@
 }
 
 .dark .landing-hero {
-  /* background: linear-gradient(138.18deg, #eae8fd 0%, #fce5e6 94.44%); */
+  background: linear-gradient(90deg, #1b1c31 0%, #221b31 100%);
 }
 
-.footer-bg {
+
+.light .footer-bg {
   background: url('/footer-bg-light.png') no-repeat center center;
+  background-size: cover;
+}
+
+.dark .footer-bg {
+  background: url('/footer-bg-dark.png') no-repeat center center;
   background-size: cover;
 }
