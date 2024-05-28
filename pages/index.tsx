@@ -10,13 +10,15 @@ import FrequentQuestions from "@/components/FrequentQuestions";
 import GetStarted from "@/components/GetStarted";
 import Footer from "@/components/Footer";
 import ContactUs from "@/components/ContactUs";
+import HeroWithScroll from "@/components/HeroWithScroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className={`${inter.className}`}>
-      <Hero />
+      {/* <Hero /> */}
+      <HeroWithScroll />
       <Newspaper />
       <PerfectSolution />
       <Testimonials />

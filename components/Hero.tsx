@@ -82,7 +82,7 @@ export default function Hero() {
                   height={100}
                   src={"/seal-garantie.webp"}
                   alt='logo.png'
-                  // loading="eager"
+                // loading="eager"
                 />
               </a>
             </div>
@@ -94,7 +94,7 @@ export default function Hero() {
                   height={50}
                   src={"/Join-community-arrow.png"}
                   alt='logo.png'
-                  // loading="eager"
+                // loading="eager"
                 />
               </div>
             </div>
