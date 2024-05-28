@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { MacbookScroll } from "./ui/macbook-scroll";
 
 const HeroWithMacbookScroll = ({ className }: { className?: string }) => {
-    // if (className === "hidden lg:block") {
-    //     // return null;
-    // }
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 1024);
+    }, []);
+
+    if (isMobile) {
+        return null;
+    }
 
     return (
         <div className={`overflow-hidden w-full ${className}`}>
