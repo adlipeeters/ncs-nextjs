@@ -23,11 +23,11 @@ const words = [
   },
 ];
 
-export default function Hero() {
+const Hero = ({ className }: { className?: string }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="">
+    <div className={`${className}`}>
       {/* <Image
       className='fixed top-4 left-4 lg:left-8 hidden lg:block'
         width={150}
@@ -124,3 +124,5 @@ export default function Hero() {
     </div>
   )
 }
+
+export default Hero;

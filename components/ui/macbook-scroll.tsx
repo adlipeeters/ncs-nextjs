@@ -24,6 +24,7 @@ import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 export const MacbookScroll = ({
   src,
@@ -36,6 +37,8 @@ export const MacbookScroll = ({
   title?: string | React.ReactNode;
   badge?: React.ReactNode;
 }) => {
+  const [logoUrl, setLogoUrl] = useState<string>('/logo.png');
+  const { resolvedTheme } = useTheme()
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -43,6 +46,10 @@ export const MacbookScroll = ({
   });
 
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setLogoUrl(resolvedTheme === 'light' ? '/logo.png' : '/logo_white.png');
+  }, [resolvedTheme]);
 
   useEffect(() => {
     if (window && window.innerWidth < 768) {
@@ -68,7 +75,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[200vh]  flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
+      className="min-h-[200vh]  flex flex-col items-center py-0 md:py-60 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
     >
       <motion.h2
         style={{
@@ -113,7 +120,15 @@ export const MacbookScroll = ({
         {showGradient && (
           <div className="h-40 w-full absolute bottom-0 inset-x-0 bg-gradient-to-t dark:from-black from-white via-white dark:via-black to-transparent z-50"></div>
         )}
-        {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
+        {/* {badge && <div className="absolute bottom-4 left-4">{badge}</div>} */}
+        <Image
+          className="absolute bottom-4 left-4"
+          width={75}
+          height={40}
+          // loading="eager"
+          alt="logo"
+          src={logoUrl}
+        />
       </div>
     </div>
   );
@@ -149,7 +164,15 @@ export const Lid = ({
           className="absolute inset-0 bg-[#010101] rounded-lg flex items-center justify-center"
         >
           <span className="text-white">
-            <AceternityLogo />
+            {/* <AceternityLogo /> */}
+            <Image
+              className=""
+              width={150}
+              height={40}
+              // loading="eager"
+              alt="logo"
+              src={'/logo_white.png'}
+            />
           </span>
         </div>
       </div>

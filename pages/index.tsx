@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import Hero from "@/components/Hero";
 import { Newspaper } from "@/components/Newspaper";
@@ -10,17 +9,17 @@ import FrequentQuestions from "@/components/FrequentQuestions";
 import GetStarted from "@/components/GetStarted";
 import Footer from "@/components/Footer";
 import ContactUs from "@/components/ContactUs";
-import HeroWithScroll from "@/components/HeroWithScroll";
 import HeroWithMacbookScroll from "@/components/HeroWithMacbookScroll";
+// import HeroWithScroll from "@/components/HeroWithScroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className={`${inter.className}`}>
-      <Hero />
-      <HeroWithScroll />
-      <HeroWithMacbookScroll />
+      {/* <HeroWithScroll /> */}
+      <Hero className="lg:hidden" />
+      <HeroWithMacbookScroll className="hidden lg:block" />
       <Newspaper />
       <PerfectSolution />
       <Testimonials />

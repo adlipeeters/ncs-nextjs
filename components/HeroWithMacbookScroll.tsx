@@ -2,12 +2,16 @@ import React from "react";
 import Link from "next/link";
 import { MacbookScroll } from "./ui/macbook-scroll";
 
-const HeroWithMacbookScroll = () => {
+const HeroWithMacbookScroll = ({ className }: { className?: string }) => {
+    // if (className === "hidden lg:block") {
+    //     // return null;
+    // }
+
     return (
-        <div className="overflow-hidden w-full">
+        <div className={`overflow-hidden w-full ${className}`}>
             <MacbookScroll
                 title={
-                    <span className="hero-title">
+                    <span className="hero-title text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl">
                         Preia controlul afacerii cu <br /> Leelo!
                     </span>
                 }
