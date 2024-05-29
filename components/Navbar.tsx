@@ -25,7 +25,7 @@ function Navbar({ className }: { className?: string }) {
             // className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 px-4 hidden lg:block", className)}>
             className={cn("fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 px-4", className)}>
             <Menu setActive={setActive}>
-                <MenuItem setActive={setActive} active={active} item="Acasa">
+                <MenuItem setActive={setActive} active={active} item="Acasa" href={"/"}>
                     {/* <div className="flex flex-col space-y-4 text-sm">
                         <HoveredLink href="/web-dev">Web Development</HoveredLink>
                         <HoveredLink href="/interface-design">Interface Design</HoveredLink>
@@ -59,8 +59,8 @@ function Navbar({ className }: { className?: string }) {
                     </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="De ce leelo ?"></MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Despre noi"></MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Contact"></MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Despre noi" href={"/despre"}></MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Contact" href={"/contact"}></MenuItem>
                 <ThemeSwitcher />
             </Menu>
 

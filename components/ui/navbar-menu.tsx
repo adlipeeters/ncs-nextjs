@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Cross as Hamburger } from 'hamburger-react'
+import { usePathname } from "next/navigation";
 
 const transition = {
   type: "spring",
@@ -19,20 +20,25 @@ export const MenuItem = ({
   setActive,
   active,
   item,
+  href,
   children,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
+  href?: string
   children?: React.ReactNode;
 }) => {
+  const currentPath = usePathname();
+  console.log(currentPath)
+
   return (
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer font-medium"
       >
-        {item}
+        {!href ? item : <Link className={`${currentPath === href ? 'text-[#7367f0] underline underline-offset-[5px]' : ''}`} href={href}>{item}</Link>}
       </motion.p>
       {active !== null && (
         <motion.div

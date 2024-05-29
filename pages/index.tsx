@@ -28,7 +28,7 @@ export default function Home() {
       <FrequentQuestions />
       <GetStarted />
       <ContactUs />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
